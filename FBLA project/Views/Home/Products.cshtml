@@ -1,0 +1,180 @@
+﻿@model FBLA_project.ProductsModel
+
+
+@section Scripts {
+    <script type="text/javascript" src="~/js/ProductsSripts.js"></script>
+}
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ProductStyles.css" />
+}
+
+@if (Model.LoginRequired)
+{
+    <h1 class="header">It is required that you log in in order to make a purchase </h1>
+}
+
+@if (Model.PurchaseSuccessful)
+{
+    <script>alert("Purchase Successful")</script>
+}
+
+
+
+<h1 class="title">Products</h1>
+
+<div class="card-deck big-box">
+    <div class="card card-sizer">
+        <div class="card-title">
+            <h5 class="wash-title">Touchless</h5>
+            <h6 class="price">$7.99</h6>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <ul>
+                    <li>High-pressure water jets</li>
+                    <li>Gentle Foam</li>
+                    <li>Eco-friendly detergents</li>
+                    <li>Touchless drying</li>
+                    <li>Body wax</li>
+                    <li>Underbody flush</li>
+                    <li>Tire gloss</li>
+                </ul>
+            </p>
+        </div>
+        <img class="card-img-bottom" src="~/Images/Touchless-istock.webp" />
+    </div>
+
+    <div class="card card-sizer">
+        <div class="card-title">
+            <h5 class="wash-title">Soft Touch</h5>
+            <h6 class="price">$13.99</h6>
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">
+                <ul>
+                    <li>Soft cloth scrub</li>
+                    <li>High-pressure water jets</li>
+                    <li>Gentle Foam</li>
+                    <li>Eco-friendly detergents</li>
+                    <li>Touchless drying</li>
+                    <li>Body wax</li>
+                    <li>Underbody flush</li>
+                    <li>Tire gloss</li>
+                </ul>
+            </p>
+
+        </div>
+        <img class="card-img-bottom" src="~/Images/SoftTouch-istock.webp" />
+    </div>
+
+    <div class="card card-sizer">
+        <div class="card-title">
+            <h5 class="wash-title">Manual</h5>
+            <h6 class="price">$19.99</h6>
+        </div>
+        <div class="card-body">
+           <p class="card-text">
+           <ul>
+                <li>High pressure rinse</li>
+                <li>Full body soap scrub</li>
+                <li>Window cleaning</li>
+                <li>Bug removal</li>
+                <li>Rim and tire cleaning</li>
+                <li>Tire gloss</li>
+                <li>Microfiber towel drying</li>
+                <li>Body wax</li>
+                </ul>
+            </p>
+            <p class="card-text">
+                
+                All operations done by employees to ensure that no part of your vehicle is left uclean!
+            </p>
+        </div>
+        <img class="card-img-bottom" src="~/Images/Manual-istock.webp" />
+    </div>
+
+    <div class="membership-box">
+        <div class="card card-sizer">
+            <div class="card-title">
+                <h5 class="wash-title">Membership - Touchless</h5>
+                <h6 class="price">$30</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Buying this package will get you our touchless wash with UNLIMITED washing.</p>
+
+            </div>
+            <button class="membership-btn" onclick="openMembershipDisplay('Touchless');">Purchase Product</button>
+        </div>
+
+        <div class="card card-sizer">
+            <div class="card-title">
+                <h5 class="wash-title">Membership - Soft Touch</h5>
+                <h6 class="price">$40</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Buying this package will get you our soft touch wash with UNLIMITED washing.
+
+                </p>
+            </div>
+            <button class="membership-btn" onclick="openMembershipDisplay('Soft Touch');">Purchase Product</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div id="data-modal" class="modal">
+
+    <div class="modal-content">
+        <button class="btn-close" onclick="closeModal();"></button>
+        <div>
+            @if (Model.LoggedIn)
+            {
+                <h1 class="title">Vehicle Info</h1>
+                @using (Html.BeginForm("Products", "Home", FormMethod.Post, new { @class = "zen-form-group", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.MembershipType, new { @class = "form-input", id = "membership-type" })
+
+
+                    @Html.LabelFor(m => m.Car.Make, new { @class = "zen-label col-md-2", id = "membership-type" })
+                    <div class="">
+                        @Html.TextBoxFor(m => m.Car.Make, new { @class = "form-input" })
+                        @Html.ValidationMessageFor(m => m.Car.Make)
+                    </div>
+
+                    @Html.LabelFor(m => m.Car.Model, new { @class = "zen-label col-md-2", id = "membership-type" })
+                    <div class="">
+                        @Html.TextBoxFor(m => m.Car.Model, new { @class = "form-input" })
+                        @Html.ValidationMessageFor(m => m.Car.Model)
+                    </div>
+
+                    @Html.LabelFor(m => m.Car.Color, new { @class = "zen-label col-md-2", id = "membership-type" })
+                    <div class="">
+                        @Html.TextBoxFor(m => m.Car.Color, new { @class = "form-input" })
+                        @Html.ValidationMessageFor(m => m.Car.Color)
+                    </div>
+
+                    @Html.LabelFor(m => m.Car.LicensePlate, new { @class = "zen-label col-md-2", id = "membership-type" })
+                    <div class="">
+                        @Html.TextBoxFor(m => m.Car.LicensePlate, new { @class = "form-input" })
+                        @Html.ValidationMessageFor(m => m.Car.LicensePlate)
+                    </div>
+                    <input type="submit" value="Submit" class="submit" class="btn-default" style="background-color: green;" />
+                }
+            }
+            else
+            {
+                <h1 class="header">In order to make a purchase, please <a href="/Home/Login">Login</a></h1>
+            }
+
+        </div>
+    </div>
+
+</div>
+

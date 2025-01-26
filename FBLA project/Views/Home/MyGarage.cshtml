@@ -1,0 +1,62 @@
+﻿@model FBLA_project.MyGarageModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@section Styles {
+    <link rel="stylesheet" href="/css/MyGarageStyles.css" />
+}
+
+@section Scripts {
+    <script>
+        window.onbeforeunload = function () { }
+    </script>
+}
+
+@if (Model.LoggedIn)
+{
+    <h1 class="greeting">Hello, @(Model.Name)</h1>
+
+
+    if (Model.Memberships is not null)
+    {
+        <h2 class="greeting-info">You have @Model.Memberships.Count memberships</h2>
+        <div class="membership-section">
+            @foreach (var membership in Model.Memberships)
+            {
+                <div class="membership-display">
+                    <div class="type-of-wash">
+                        @membership.MembershipType
+                    </div>
+                    <div class="vehicle-display">
+                        <div>
+                            <span class="car-property">Color: <span class="property">@membership.Car.Color</span></span>
+                            <span class="car-property">
+                                Make: <span class="property">@membership.Car.Make</span>
+                            </span>
+                            <span class="car-property">
+                                Model: <span class="property">@membership.Car.Model</span>
+                            </span>
+                            <span class="car-property">License Plate: <span class="property">@membership.Car.LicensePlate</span></span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <h2 class="greeting-info">
+            You have no memberships, to buy a membership
+            <br />
+            <a asp-action="Products" asp-controller="Home" class="click-here">Click Here</a>
+        </h2>
+    }
+
+}
+else
+{
+    <h1 class="title">My Garage</h1>
+    <h3 style="text-align:center; color: white;">Please log in to see your membership information.  </h3>
+    <div style="display:flex; justify-content:center;">
+        <a asp-action="Login" asp-controller="Home" class="login">Log In</a>
+    </div>
+}

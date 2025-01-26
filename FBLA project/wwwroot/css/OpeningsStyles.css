@@ -1,0 +1,47 @@
+﻿.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: stretch;
+    align-items: stretch;
+}
+
+.card-sizer {
+    width: 20rem;
+    min-width: 20rem;
+}
+
+.card-body {
+    background-color: rgb(33,33,33);
+}
+
+.card-text, .card-title {
+    color: white;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.apply-btn {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--zen-pink);
+    padding: 10px;
+    text-align:center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 22px;
+}
+    .apply-btn:hover {
+        color: black;
+        background-color: var(--zen-purple);
+        font-size: 24px;
+    }

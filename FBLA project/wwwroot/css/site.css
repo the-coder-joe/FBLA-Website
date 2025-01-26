@@ -1,0 +1,156 @@
+:root {
+    --zen-pink: rgb(223 86 116);
+    --zen-purple: rgb(127 65 137);
+    --prime: #212529;
+    --accent: rgb(198, 160, 35);
+    --secondary: rgb(80, 149, 234);
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    color-scheme: dark;
+}
+
+body {
+    margin-bottom: 60px;
+    color-scheme: dark;
+    font-family: Georgia, 'Times New Roman', Times, serif, Times, serif;
+    color: white;
+}
+
+nav {
+    background-color: black;
+}
+
+main {
+    padding-top: 60px;
+    min-height: 85vh;
+}
+
+#mail {
+    min-width: 100%
+}
+
+.logo-image {
+    height: 2.3rem;
+    margin: 0px 1rem 0px 0.5rem;
+}
+
+.login-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 55%);
+}
+
+    .login-link:hover {
+        color: rgba(255, 255, 255, 80%);
+    }
+
+/*Site-Wide property specifications*/
+
+h1.title {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 70px;
+}
+
+h1, p, h2, ul {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif, Times, serif;
+}
+
+
+
+/*For forms*/
+
+.zen-form-group {
+    background-color: #2a2a2a;
+    width: 30rem;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.zen-label {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+    font-family: Georgia, Times, Times New Roman, serif;
+}
+
+.zen-form-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-container {
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+    background-color: #404040;
+    color: #d1d1d1;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.btn-default {
+    background-color: #6c63ff;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .btn-default:hover {
+        background-color: #5850e6;
+    }
+
+.sign-up-link {
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+.field-validation-error {
+    color: #ff1010a0;
+    text-align: center;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "Id": "11848",
+    "ProtectedInfo": {
+      "PasswordHash": "81B4AC0B49B32C4E88D69F0653069199D587AF7AB6B22DAD091B54F0DE072DA5CFBB0BA12C39A8AC",
+      "Salt": "b/2Ghg==",
+      "IsAdmin": false
+    },
+    "UnprotectedInfo": {
+      "Username": "Wyatt",
+      "Email": "wyattfirkus@gmail.com",
+      "Gender": "Male",
+      "Name": "Wyatt Firkus",
+      "Memberships": [
+        {
+          "MembershipType": "Touchless",
+          "Car": {
+            "Make": "Ford",
+            "Model": "Focus",
+            "Color": "White",
+            "LicensePlate": "ARM-1231"
+          }
+        },
+        {
+          "MembershipType": "Touchless",
+          "Car": {
+            "Make": "ford ",
+            "Model": "focus ",
+            "Color": "red",
+            "LicensePlate": "1231232"
+          }
+        },
+        {
+          "MembershipType": "Touchless",
+          "Car": {
+            "Make": "ford",
+            "Model": "f 150",
+            "Color": "white",
+            "LicensePlate": "2123455"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Id": "-23184",
+    "ProtectedInfo": {
+      "PasswordHash": "59505BE078BD82E7C9317F5BEE9C0D1E1C7BDF91E2E18EAD80A7BC3D89BF8247C625DC44BF7BFB3C",
+      "Salt": "uZIadw==",
+      "IsAdmin": false
+    },
+    "UnprotectedInfo": {
+      "Username": "Joey",
+      "Email": "jkozicki5@gmail.com",
+      "Gender": "Male",
+      "Name": "Joey",
+      "Memberships": [
+        {
+          "MembershipType": "Touchless",
+          "Car": {
+            "Make": "Toyota",
+            "Model": "Rav 4",
+            "Color": "Green",
+            "LicensePlate": "123213"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Id": "-21501",
+    "ProtectedInfo": {
+      "PasswordHash": "7917AC01061FE19E44103B92164E1B1538942BD9C2887510A7CF4C9924DDB7A798339E31015A3D8E",
+      "Salt": "PNHhfg==",
+      "IsAdmin": true
+    },
+    "UnprotectedInfo": {
+      "Username": "Admin",
+      "Email": "jkozicki5@gmail.com",
+      "Gender": "Other",
+      "Name": "Admin",
+      "Memberships": null
+    }
+  },
+  {
+    "Id": "-16246",
+    "ProtectedInfo": {
+      "PasswordHash": "D26517918E38690E2C3700AE5EE4753F1D5D2D49449E72D32DD880A8139D747D077FDE3C0E3BB120",
+      "Salt": "jPJouw==",
+      "IsAdmin": false
+    },
+    "UnprotectedInfo": {
+      "Username": "Bob",
+      "Email": "fjdsfa@fjfjfj.com",
+      "Gender": "male",
+      "Name": "Bob",
+      "Memberships": null
+    }
+  },
+  {
+    "Id": "-24752",
+    "ProtectedInfo": {
+      "PasswordHash": "6F4FDE650672CDD789B7F46A1A302E0BDB86E15A018F61DC250A06CA3AE71F01F4523E22B5FC1DCB",
+      "Salt": "Tm7Vug==",
+      "IsAdmin": false
+    },
+    "UnprotectedInfo": {
+      "Username": "a",
+      "Email": "a",
+      "Gender": "a",
+      "Name": "fbla",
+      "Memberships": null
+    }
+  },
+  {
+    "Id": "21066",
+    "ProtectedInfo": {
+      "PasswordHash": "A6D665904BB15B55ADCAB4C725486E0C5BB866D5DA96E757F82A6EB88FA34DA7C4C618596CC87F63",
+      "Salt": "KwJh0Q==",
+      "IsAdmin": false
+    },
+    "UnprotectedInfo": {
+      "Username": "1",
+      "Email": "1",
+      "Gender": "1",
+      "Name": "joe",
+      "Memberships": null
+    }
+  }
+]
