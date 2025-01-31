@@ -25,56 +25,6 @@ namespace FBLA_project
             return View(new BaseModel { UnprotectedData = user.UnprotectedInfo });
         }
 
-        public IActionResult Products()
-        {
-            User? user = UserService.GetUserFromHttpContext(HttpContext);
-            if (user is null)
-            { return View(new ProductsModel()); }
-
-            return View(new ProductsModel { UnprotectedData = user.UnprotectedInfo, LoginRequired = false, PurchaseSuccessful = false }); 
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Products(ProductsModel model)
-        {
-            if(ModelState.IsValid)
-            {
-                User? user= UserService.GetUserFromHttpContext(HttpContext);
-                if (user is null)
-                {
-                    return View(new ProductsModel { LoginRequired = true});
-                }
-
-                if (model is null || ( model.MembershipType is null || model.Car is null))
-                {
-                    return View(new ProductsModel { PurchaseSuccessful = false }); 
-                }
-
-                var newMembership = new Membership
-                {
-                    Car = model.Car,
-                    MembershipType = model.MembershipType
-                };
-
-                if (user.UnprotectedInfo.Memberships is null)
-                {
-                    user.UnprotectedInfo.Memberships = new List<Membership> ();
-                }
-
-                user.UnprotectedInfo.Memberships.Add(newMembership);
-                UserService.ModifyUser(user.Id, user);
-
-                model.PurchaseSuccessful = true;
-                model.UnprotectedData = user.UnprotectedInfo;
-
-                return View(model);
-            }
-            model.UnprotectedData = UserService.GetUserFromHttpContext(HttpContext)?.UnprotectedInfo;
-            model.BadRequest = true;
-            return View(model);
-        }
-
         #region AdminLogin
 
         //distributes actual login page
