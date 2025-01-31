@@ -16,19 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Private\Users.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\MyGarageStyles.css" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="JobFolder\Resumes\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Private\Users.json" />
     <None Include="Views\Home\sources.cshtml" />
   </ItemGroup>
 
