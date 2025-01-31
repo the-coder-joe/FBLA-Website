@@ -16,16 +16,16 @@
     position: absolute;
     top: 85%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
 }
 
 .main-title {
-    color: rgb(223 86 116);
+    color: rgb(0 0 0);
     font-size: 90px;
 }
 
 .title-subtitle {
-    color: rgb(127 65 137);
+    color: rgb(0 0 0);
 }
 
 @media (max-width: 500px) {
@@ -34,7 +34,7 @@
     }
 
     .title-subtitle {
-        color: rgb(127 65 137);
+        color: rgb(0 0 0);
         font-size: 40px;
     }
 }
