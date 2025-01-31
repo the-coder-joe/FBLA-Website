@@ -20,5 +20,10 @@ namespace FBLA_project.Controllers
             };
             return View(model);
         }
+
+        public IActionResult SubmitApplication()
+        {
+            return View();
+        }
     }
 }

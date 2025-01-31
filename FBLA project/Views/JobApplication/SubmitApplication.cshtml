@@ -1,0 +1,25 @@
+﻿<script>
+    let questions=[];
+    function addQuestion() {
+        let q = document.getElementsByClassName("question-input")[0].value;
+        questions.push(q);
+        renderQuestions();
+    }
+
+    function renderQuestions(){
+        let el = document.getElementById("questions-display");
+        el.innerHTML="";
+
+    }
+    
+</script>
+
+<div class="body">
+    <div class="form-part">
+        <button class="add-button" onclick="addQuestion">Add Question</button>
+        <textarea class="question-input"></textarea>
+    </div>
+    <div id="questions-display">
+
+    </div>
+</div>
