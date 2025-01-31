@@ -26,18 +26,11 @@
                             <a class="nav-link" asp-controller="JobApplication" asp-action="Apply">Apply for Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="JobApplication" action="">Submit an Application</a>
+                            <a class="nav-link" asp-controller="JobApplication" asp-action="SubmitApplication">Submit an Application(For Employers)</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-auto order-5 nav-item">
-                        @if (Model?.UnprotectedData is null)
-                        {
-                            <a class="nav-link login-link" href="/Home/Login">Login</a>
-                        }
-                        else
-                        {
-                            <a class="nav-link login-link" asp-controller="Home" asp-action="Account">@Model.UnprotectedData.Name</a>
-                        }
+                        <a class="nav-link login-link" href="/Login/Login">Login</a>
                     </div>
                 </div>
             </div>
