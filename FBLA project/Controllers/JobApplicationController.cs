@@ -25,5 +25,18 @@ namespace FBLA_project.Controllers
         {
             return View();
         }
+
+        public IActionResult Login(LoginModel loginModel)
+        {
+            if (loginModel != null)
+                if (ModelState.IsValid)
+                    if (loginModel.Username == "admin")
+                        if (loginModel.Password == "password")
+                            return RedirectToAction();
+
+            return View();
+        }
+
+        public IActionResult () {
     }
 }

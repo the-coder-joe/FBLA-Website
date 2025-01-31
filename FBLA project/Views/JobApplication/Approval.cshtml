@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Approval Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .posting {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .approve-button, .deny-button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .approve-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+            .approve-button:hover {
+                background-color: #218838;
+            }
+
+        .deny-button {
+            background-color: #dc3545;
+            color: white;
+        }
+
+            .deny-button:hover {
+                background-color: #c82333;
+            }
+    </style>
+    <script>
+        let pendingPosts = [
+            { id: 1, question: "How do I apply?", employer: "ABC Corp", jobTitle: "Software Engineer" },
+            { id: 2, question: "What are the job requirements?", employer: "XYZ Ltd", jobTitle: "Marketing Manager" }
+        ];
+
+        function renderPosts() {
+            let display = document.getElementById("posts-display");
+            display.innerHTML = "";
+            pendingPosts.forEach((post, index) => {
+                let div = document.createElement("div");
+                div.classList.add("posting");
+                div.innerHTML = `<strong>Employer:</strong> ${post.employer}<br>
+                                 <strong>Job Title:</strong> ${post.jobTitle}<br>
+                                 <strong>Question:</strong> ${post.question}<br>
+                                 <button class='approve-button' onclick='approvePost(${index})'>Approve</button>
+                                 <button class='deny-button' onclick='denyPost(${index})'>Deny</button>`;
+                display.appendChild(div);
+            });
+        }
+
+        function approvePost(index) {
+            pendingPosts.splice(index, 1);
+            renderPosts();
+        }
+
+        function denyPost(index) {
+            pendingPosts.splice(index, 1);
+            renderPosts();
+        }
+
+        window.onload = renderPosts;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Approval</h2>
+        <div id="posts-display"></div>
+    </div>
+</body>
+</html>
