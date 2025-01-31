@@ -6,8 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Summit Valle
-        y</title>
+    <title>@ViewData["Title"] - Summit Valley</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     
@@ -24,14 +23,14 @@
                 <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="JobApplication" asp-action="Apply">Apply for Jobs</a>
+                            <a class="nav-link" asp-controller="JobApplication" asp-action="Applications">Apply for Jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="JobApplication" action="">Make a Posting</a>
+                            <a class="nav-link" asp-controller="JobApplication" asp-action="SubmitApplication">Make a Posting</a>
                         </li>
                     </ul>
                     <div class="d-flex ms-auto order-5 nav-item">
-                        <a class="nav-link login-link" href="/Login/Login">Login</a>
+                        <a class="nav-link login-link" href="/JobApplication/Login">Login</a>
                     </div>
                 </div>
             </div>

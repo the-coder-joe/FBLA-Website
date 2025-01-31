@@ -28,65 +28,65 @@ namespace FBLA_project
         #region AdminLogin
 
         //distributes actual login page
-        public ActionResult Login()
-        {
-            User? user = UserService.GetUserFromHttpContext(HttpContext);
-            if (user is null)
-            { return View(); }
+        //public ActionResult Login()
+        //{
+        //    User? user = UserService.GetUserFromHttpContext(HttpContext);
+        //    if (user is null)
+        //    { return View(); }
 
-            return RedirectToAction("Account", "Home");
-        }
+        //    return RedirectToAction("Account", "Home");
+        //}
 
-        public IActionResult Account()
-        {
-            User? user = UserService.GetUserFromHttpContext(HttpContext);
-            if (user is null)
-            { return RedirectToAction("Home", "Login"); }
+        //public IActionResult Account()
+        //{
+        //    User? user = UserService.GetUserFromHttpContext(HttpContext);
+        //    if (user is null)
+        //    { return RedirectToAction("Home", "Login"); }
 
-            if(user.ProtectedInfo.IsAdmin)
-            {
-                return RedirectToAction("AdminView");
-            }
+        //    if(user.ProtectedInfo.IsAdmin)
+        //    {
+        //        return RedirectToAction("AdminView");
+        //    }
 
-            return View(new AccountModel { UnprotectedData = user.UnprotectedInfo });
-        }
+        //    return View(new AccountModel { UnprotectedData = user.UnprotectedInfo });
+        //}
 
         //handles form submission
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                User? user = null;
-                try
-                {
-                    user = UserService.AuthenticateUser(model.Username, model.Password);
-                }
-                catch (Exception ex)
-                {
-                    if (ex.Message == "User does not exist")
-                    {
-                        model.Message = "This user does not exist, please create an account.";
-                    }
-                }
-                if (user is null)
-                {
-                    model.Message = "Your password is incorrect";
-                    return View(model);
-                }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(LoginModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        User? user = null;
+        //        try
+        //        {
+        //            user = UserService.AuthenticateUser(model.Username, model.Password);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            if (ex.Message == "User does not exist")
+        //            {
+        //                model.Message = "This user does not exist, please create an account.";
+        //            }
+        //        }
+        //        if (user is null)
+        //        {
+        //            model.Message = "Your password is incorrect";
+        //            return View(model);
+        //        }
 
-                var token = UserService.GenerateSessionToken(user);
-                HttpContext.Session.SetString("SessionToken", token);
+        //        var token = UserService.GenerateSessionToken(user);
+        //        HttpContext.Session.SetString("SessionToken", token);
 
-                if (user.ProtectedInfo.IsAdmin)
-                {
-                    return RedirectToAction("AdminView", "Home");
-                }
-                return RedirectToAction("Account", "Home");
-            }
-            return View();
-        }
+        //        if (user.ProtectedInfo.IsAdmin)
+        //        {
+        //            return RedirectToAction("AdminView", "Home");
+        //        }
+        //        return RedirectToAction("Account", "Home");
+        //    }
+        //    return View();
+        //}
 
         public IActionResult Logout()
         {
