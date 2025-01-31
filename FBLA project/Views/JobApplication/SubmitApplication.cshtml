@@ -1,0 +1,84 @@
+﻿<style>
+    .form-part {
+        margin-bottom: 20px;
+    }
+
+    .question-input {
+        width: 100%;
+        height: 80px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: none;
+    }
+
+    .add-button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .add-button:hover {
+            background-color: #218838;
+        }
+
+    #questions-display p {
+        background: rgb(0, 0, 0);
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+</style>
+
+<script>
+    let questions = [];
+    function addQuestion() {
+        let q = document.getElementsByClassName("question-input")[0].value;
+        if (q.trim() !== "") {
+            questions.push(q);
+            renderQuestions();
+            document.getElementsByClassName("question-input")[0].value = "";
+        }
+    }
+    function renderQuestions() {
+        let el = document.getElementById("questions-display");
+        el.innerHTML = "";
+        for (let q of questions) {
+            const newChild = document.createElement("p");
+            newChild.textContent = q;
+            el.appendChild(newChild);
+        }
+    }
+
+    function smt() {
+        location.reload();
+    }
+</script>
+
+<div class="body" style="display: flex; flex-direction: column; align-items:center; min-height: 500px;">
+    <div class="form-part">
+        <input type="text" class="input-field employer-input" placeholder="Employer Name">
+        <input type="text" class="input-field job-title-input" placeholder="Job Title">
+    </div>
+    <div class="form-part">
+        <textarea class="question-input" placeholder="Enter your question..."></textarea>
+        <button class="add-button" onclick="addQuestion()">Add Question</button>
+    </div>
+    <div id="questions-display"></div>
+
+</div>
+<div style="display:flex;justify-content:center;"><button onclick="smt()" class="add-button">Submit</button></div>
+
+
