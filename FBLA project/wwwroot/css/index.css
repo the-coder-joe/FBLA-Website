@@ -9,7 +9,7 @@
     height: 80vh;
     object-position: 50% 100%;
     object-fit: cover;
-    border-bottom: 1px solid rgb(197 129 123);
+    border-bottom: 1px solid rgb(255 255 255);
 }
 
 .title-container {
@@ -22,6 +22,11 @@
 .main-title {
     color: rgb(0 0 0);
     font-size: 90px;
+    background: #ffffff24;
+    border-radius: 43px;
+    backdrop-filter: blur(13px);
+    padding: 10px;
+}
 }
 
 .title-subtitle {

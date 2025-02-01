@@ -19,14 +19,8 @@
 {
     <div class="head-container">
         <h1 class="title">
-            Apply for
-            <span class="job-name">@Model.Job.Title</span>
+            Apply for Software Engineer at Sentry
         </h1>
-
-        <div class="job-info">
-            <img class="job-img" src="@Model.Job.ImgSrc" />
-            <p class="job-info-text">@Model.Job.Text</p>
-        </div>
     </div>
 }
 
@@ -42,7 +36,7 @@
     {
         <div class="msg">@Model.Message</div>
     }
-    <form class="application-form" asp-controller="Jobs" asp-action="Application" asp-route-id="@Model.Job.Id" method="post" enctype="multipart/form-data">
+    <form class="application-form">
         @Html.AntiForgeryToken()
 
         <div class="zen-form-group" id="item-name">
@@ -60,12 +54,12 @@
         </div>
 
         <div class="zen-form-group" id="item-strengths">
-            <label class="field" asp-for="Application.Strengths">What would you consider to be your strengths?</label>
+            <label class="field" asp-for="Application.Strengths">Why would you like this job?</label>
             <textarea class="form-input" asp-for="Application.Strengths" required></textarea>
         </div>
 
         <div class="zen-form-group" id="item-why">
-            <label class="field" asp-for="Application.WhyThisJob">Why would you like to apply here? </label>
+            <label class="field" asp-for="Application.WhyThisJob">Why are you qualified?</label>
             <textarea class="form-input" asp-for="Application.WhyThisJob" required></textarea>
         </div>
 
@@ -77,6 +71,6 @@
         </div>
 
 
-        <button class="apply" type="submit" id="item-submit-btn">Apply</button>
+        <button class="apply" href="/JobApplication/Successful" id="item-submit-btn">Apply</button>
     </form>
 }
