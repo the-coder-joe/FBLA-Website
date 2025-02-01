@@ -36,7 +36,7 @@
     {
         <div class="msg">@Model.Message</div>
     }
-    <form class="application-form">
+    <div class="application-form">
         @Html.AntiForgeryToken()
 
         <div class="zen-form-group" id="item-name">
@@ -71,6 +71,6 @@
         </div>
 
 
-        <button class="apply" href="/JobApplication/Successful" id="item-submit-btn">Apply</button>
-    </form>
+        <a href="/JobApplication/Success"><button class="apply" id="item-submit-btn">Apply</button></a>
+    </div>
 }
