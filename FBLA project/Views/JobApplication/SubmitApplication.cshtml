@@ -27,7 +27,7 @@
         }
 
     #questions-display p {
-        background: rgb(0, 0, 0);
+        background: #404040;
         padding: 10px;
         border-radius: 5px;
         margin: 5px 0;
@@ -40,6 +40,7 @@
         border-radius: 5px;
         margin-top: 5px;
     }
+ 
 </style>
 
 <script>
@@ -67,18 +68,51 @@
     }
 </script>
 
-<div class="body" style="display: flex; flex-direction: column; align-items:center; min-height: 500px;">
-    <div class="form-part">
-        <input type="text" class="input-field employer-input" placeholder="Employer Name">
-        <input type="text" class="input-field job-title-input" placeholder="Job Title">
+
+
+<h1 style="margin: 20px ; text-align: center" > Make a Posting</h1>
+
+<div class="application-form"   method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="zen-form-group" id="item-name">
+        <label class="field" >
+           Employer Name
+        </label>
+        <input class="form-input"  required />
     </div>
-    <div class="form-part">
-        <textarea class="question-input" placeholder="Enter your question..."></textarea>
+
+    <div class="zen-form-group" id="item-phone">
+        <label class="field" >
+            Contact Information
+        </label>
+        <input class="form-input" required />
+    </div>
+	<div class="zen-form-group" id="item-phone">
+		<label class="field">
+			Job title
+		</label>
+		<input class="form-input" required />
+	</div>
+    <div class="zen-form-group" id="item-phone">
+        <label class="field">
+            Jov description
+        </label>
+        <input class="form-input" required />
+    </div>
+    <div class="zen-form-group" id="item-strengths">
+        <label class="field" >Questions to ask applicants</label>
+        <textarea class="question-input form-input"  required></textarea>
         <button class="add-button" onclick="addQuestion()">Add Question</button>
+		<div id="questions-display"></div>
+	</div>
+    
+    <div class="zen-form-group" id="item-why">
+        <label class="field" >Job requirements </label>
+        <textarea class="form-input"  required></textarea>
     </div>
-    <div id="questions-display"></div>
 
-</div>
+   </div>
 <div style="display:flex;justify-content:center;"><button onclick="smt()" class="add-button">Submit</button></div>
-
+</div>
 
